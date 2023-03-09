@@ -1,0 +1,19 @@
+import Context from "@mui/base/TabsUnstyled/TabsContext";
+import { createContext, useState } from "react";
+
+export const context1 = createContext();
+
+const AppContext = ({children}) => {
+    const [categories, setCategories] = useState();
+    const [products, setProducts] = useState();
+    return(
+        <Context.Provider value={{
+            categories,
+            setCategories,
+            products,
+            setProducts,
+        }}>{children}</Context.Provider>
+    )
+}
+
+export default AppContext;
